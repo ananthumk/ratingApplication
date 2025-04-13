@@ -13,13 +13,20 @@ const DisplayStore = () => {
   const navigate = useNavigate()
 
   const [rating, setRating] = useState(0)
+  const [showRating, setShowRating] = useState(false)
+  const [id, setId] = useState(null)
 
-  const submitRating = (id) => {
-    const data = {id, rating}
-      const response = axios.post(url+ '/api/ratings/', {headers: {
+  const submitRating = async (id) => {
+    const data = { id, rating }
+    const response = await axios.post(url + '/api/ratings/', {
+      headers: {
         Authoriation: `Bearer ${token}`
-      }}, data)
-  } 
+      }
+    }, data)
+    if(response.data.success){
+      console.log('updated')
+    }
+  }
 
   return (
     <div className='display-store'>
@@ -33,14 +40,23 @@ const DisplayStore = () => {
                   <h3>{stores.name}</h3>
                   <div className='rating-container'>
                     <div className='rating'>
-                      <div className='rating-display'>
+                      <div onClick={() => {
+                        setShowRating(true);
+                        setId(stores.id);
+                      }}
+                        className='rating-display'>
                         <FaStar />
                         <p>{stores.average_rating}.0</p>
                       </div>
-                      <div className='rating-submit'  >
-                        <input onChange={(e) => setRating(e.target.value)} value={rating} type="number" placeholder='give a rating from 1 to 5' required />
-                        <button onClick={() => submitRating(stores.id)} className='submit-btn'>Submit</button>
-                      </div>
+                      {showRating && stores.id === id &&
+                        (<div className='rating-submit'  >
+                          <input onChange={(e) => setRating(e.target.value)} value={rating} type="number" placeholder='give a rating from 1 to 5' required />
+                          <button onClick={() => {
+                            setShowRating(false);
+                            submitRating(stores.id);
+                          }}
+                            className='submit-btn'>Submit</button>
+                        </div>)}
                     </div>
                     <p className='rating-count'>{stores.rating_count} Ratings</p>
                   </div>
