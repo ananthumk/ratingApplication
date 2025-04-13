@@ -1,16 +1,1 @@
-# Auto detect text files and perform LF normalization
-* text=auto
 
-# Frontend source files
-*.js text eol=lf
-*.jsx text eol=lf
-*.json text eol=lf
-*.css text eol=lf
-*.html text eol=lf
-*.md text eol=lf
-
-# Graphics
-*.png binary
-*.jpg binary
-*.gif binary
-*.ico binary
