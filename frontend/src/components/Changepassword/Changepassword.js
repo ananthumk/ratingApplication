@@ -1,11 +1,18 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './Changepassword.css'
 import { StoreContext } from '../../context/StoreContext'
 import axios from 'axios'
 
 const Changepassword = ({setPasswordPopup}) => {
   
-  const {url, token} = useContext(StoreContext);
+  const {url} = useContext(StoreContext);
+
+  let token = ''
+
+  useEffect(() => {
+    token = localStorage.getItem('token')
+    console.log('password token', token)
+  }, [])
 
   const [data, setData] = useState({
     currentPassword: '',
@@ -48,7 +55,7 @@ const Changepassword = ({setPasswordPopup}) => {
          <form onSubmit={onSubmitHandlers} className='form-conatiner' >
            <input onChange={onChangeHandler} type="password" name="currentPassword" value={data.currentPassword} placeholder='old password' required />
            <input onChange={onChangeHandler} type="password" name="newPassword" value={data.newPassword} placeholder='new password' required />
-           <button type="submit">Change Password</button>
+           <button onClick={() => setPasswordPopup(false)} type="submit">Change Password</button>
          </form>           
        </div>
     </div>
