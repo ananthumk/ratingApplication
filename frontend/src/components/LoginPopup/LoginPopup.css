@@ -1,0 +1,112 @@
+.login-popup{
+    background-color: #00000090;
+    height: 100%; 
+    width: 100%;
+    position: absolute;
+    display: grid;
+    align-items: center;
+    z-index: 1;
+  }
+  
+  .login-popup-content{
+      background-color: white;
+      width: max(28vw, 360px);
+      padding: 30px;
+      border-radius: 8px;
+      place-self: center;
+  }
+  
+  .login-popup-title{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+  
+  .login-popup-title h2{
+      font-size: 1.2rem;
+      margin: 0;
+  }
+  
+  .login-popup-title .cross{
+      cursor: pointer;
+      width: 13px;
+  }
+  
+  .login-popup-inputs{
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 20px;
+  }
+  
+  .login-popup-inputs input{
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+  }
+  .login-popup-inputs select{
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      outline: none;
+  }
+  
+  .login-popup-inputs button{
+      background-color: tomato;
+      outline: none;
+      border: none;
+      padding: 8px 15px;
+      border-radius:3px;
+      font-size: 16px;
+      color: white;
+      cursor: pointer;
+  }
+  
+  .login-popup-bottom{
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      margin-top: 10px;
+  }
+  
+  .login-popup-bottom input{
+      margin-top: 5px;
+  }
+  
+  .login-popup-last{
+      margin-top:10px ;
+  }
+  
+  .login-popup-last span{
+      color: tomato; 
+      cursor: pointer;
+      font-weight: 500;
+  }
+
+
+
+@media screen and (max-width: 768px) {
+    .login-popup-content {
+      width: 90%;
+      max-width: 360px;
+      padding: 20px;
+    }
+  
+    .login-popup-inputs {
+      gap: 15px;
+    }
+  
+    .login-popup-inputs input {
+      padding: 8px;
+      font-size: 14px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .login-popup-content {
+      width: 95%;
+      padding: 15px;
+    }
+  }

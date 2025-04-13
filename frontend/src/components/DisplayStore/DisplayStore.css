@@ -1,0 +1,167 @@
+.display-store{
+    margin-top: 20px;
+    padding: 20px 0px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.display-store h2{
+    margin-bottom: 20px;
+}
+
+.display-store .container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.store{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border: 2px solid #ccc;
+    outline: none;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.store-details{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.store-details .rating-container{
+    display: flex;
+    align-items: center;
+}
+
+.store-details .rating-container .rating-count {
+    font-size: 15px;
+    font-weight: 500;
+    margin-left: 10px;
+}
+
+.store-details .rating-container .rating{
+    display: flex;
+    padding: 4px;
+    background-color: green;
+    border-radius: 7px;
+    width: 50px;
+    align-items: center;
+    position: relative;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.store-details .rating-container .rating p{
+    margin-left: 5px;
+}
+
+.store-details .address-container{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+}
+
+.store-details .contact-info{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+}
+
+
+.rating {
+    position: relative;
+}
+
+.rating-display {
+    display: flex;
+    padding: 4px;
+    background-color: green;
+    border-radius: 7px;
+    width: 50px;
+    align-items: center;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.rating-display p {
+    margin-left: 5px;
+}
+
+.rating-submit input{
+    padding: 8px 10px;
+    font-weight: 400;
+}
+
+
+.rating-submit {
+    display: none;
+    padding: 10px;
+    width: 300px;
+    background-color: black;
+    color: white;
+    gap: 10px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 10;
+    border-radius: 6px;
+    margin-top: 5px;
+}
+
+.submit-btn{
+    background-color: white;
+    padding: 5px 8px;
+    font-weight: 500;
+    color: black;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.rating:hover .rating-submit {
+    display: flex;
+}
+
+
+@media screen and (max-width: 768px) {
+    .display-store {
+      padding: 10px 0;
+    }
+  
+    .store {
+      padding: 15px;
+    }
+  
+    .store-details h3 {
+      font-size: 18px;
+    }
+  
+    .rating-submit {
+      width: 250px;
+    }
+  
+    .store-details .address-container,
+    .store-details .contact-info {
+      font-size: 14px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .rating-submit {
+      width: 200px;
+    }
+  
+    .rating-submit input {
+      padding: 6px 8px;
+    }
+  }

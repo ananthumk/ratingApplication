@@ -1,0 +1,129 @@
+.navbar{
+    width: 100%;
+    padding: 20px 0px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    position: relative;         
+    top: 0; 
+    
+}
+
+.navbar img{
+    width: 50px;
+}
+
+.search-signup-container{
+  display: flex;
+  flex-direction: space-between;
+  padding: 0px 10px;
+  width: 500px;
+}
+.search-signup-container button{
+  font-size: 18px;
+  font-weight: 500px;
+  background-color: rgb(192, 100, 83);
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 4px;
+}
+
+.search-container{
+    display: flex;
+    align-items: center;
+}
+
+.search-container img{
+    width: 38px;
+    margin-right: 20px;
+}
+
+.search-container input{
+    width: 220px;
+    max-width: 300px ;
+    outline: none;
+    border: 1px solid #ccc;
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 2px;
+    margin-right:20px; 
+    font-size:14px ;
+}
+
+.profile-container{
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.profile-container img{
+    position: relative;
+}
+
+.profile-container .profile-option{
+    background-color: black;
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-weight: 500;
+}
+
+.profile-option{
+    display: none;
+}
+
+.profile-container .profile-option li{
+    list-style: none;
+}
+
+.profile-container:hover .profile-option {
+    z-index:1;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+}
+
+
+
+@media screen and (max-width: 1024px) {
+    .search-signup-container {
+      width: 400px;
+    }
+    
+    .search-container input {
+      width: 180px;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      gap: 20px;
+      padding: 15px;
+    }
+  
+    .search-signup-container {
+      width: 100%;
+      flex-direction: column;
+      gap: 15px;
+    }
+  
+    .search-container {
+      width: 100%;
+    }
+  
+    .search-container input {
+      width: 100%;
+      margin-right: 0;
+    }
+  
+    .sign-up {
+      width: 100%;
+    }
+  }
